@@ -26,14 +26,14 @@ cleaned_data <- read_parquet("data/02-analysis_data/cleaned_data.parquet")
 ### Model data ####
 # Data preprocessing
 cleaned_data$vendor <- as.factor(cleaned_data$vendor)  # Convert vendor to categorical
-cleaned_data$month <- as.factor(cleaned_data$month)    # Convert month to categorical
+cleaned_data$month <- as.integer(cleaned_data$month)    # Convert month to categorical
 
 # Standardize old_price for better scaling
-cleaned_data$old_price_scaled <- scale(cleaned_data$old_price)
+cleaned_data$old_price <- as.numeric(cleaned_data$old_price)
 
 # Build the Bayesian linear regression model
 model <- stan_glm(
-  current_price ~ old_price_scaled + vendor + month,
+  current_price ~ old_price + vendor + month,
   data = cleaned_data,
   family = gaussian(),
   prior = normal(0, 2.5),        # Set prior for coefficients

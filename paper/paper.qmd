@@ -173,7 +173,7 @@ ggplot(cleaned_data, aes(x = old_price, y = current_price)) +
 
 ## Model overveiw
 
-The model is a Bayesian linear regression that predicts the current price of beef products. It uses the scaled old price old price as a numerical variable and includes vendor and month as categorical variables. This setup allows the model to account for the effects of historical prices, differences between supermarkets, and seasonal variations.
+The model is a Bayesian linear regression that predicts the current price of beef products. It uses the month and old price as a numerical variable and includes vendor as categorical variables. This setup allows the model to account for the effects of historical prices, differences between supermarkets, and seasonal variations.
 
 ## Model set-up
 We set current price to be Y,Old price to be X,Vendor to be Z,month to be H,The linear regression model I will be using is:
@@ -195,7 +195,7 @@ Where,
 - $\beta_0$ The intercept term, indicating the baseline price when all predictors are at their reference levels.
 - $\beta_1$ The coefficient for old_price, representing the linear effect of the old price on the current price.
 - $\beta_2$ The coefficient for vendor, representing the effect of different vendors on the current price (a categorical variable encoded as dummy variables).
-- $\beta_3$ The coefficient for month, representing the effect of different months on the current price (a categorical variable encoded as dummy variables).
+- $\beta_3$ The coefficient for month, representing the effect of different months on the current price.
 
 In my model, normal priors with a mean of 0 and a standard deviation of 2.5 are used for the coefficients. This choice implies no specific expectation regarding the direction or magnitude of the relationships between the predictors and the dependent variable. I selected these priors because I do not have strong prior knowledge about the likely effect sizes in this context.
 
@@ -211,7 +211,7 @@ A limitation of the model is that it is entirely trained on a single dataset wit
 
 The Bayesian linear regression model was selected for this analysis due to its flexibility and ability to incorporate prior knowledge. This model allows us to estimate the effect of historical prices, vendor strategies, and seasonal trends on beef pricing while accounting for uncertainty in the estimates. The choice of predictors, including scaled old prices, vendor, and month, aligns with established theories in market dynamics and consumer behavior, ensuring the model is grounded in sound reasoning.
 
-A Bayesian approach was particularly suitable for this dataset, as it balances interpretability with predictive accuracy. By using priors, the model prevents overfitting and provides robust estimates even with limited data. This framework also enables us to quantify uncertainty in the predictions through posterior distributions, offering richer insights compared to traditional regression methods. Additionally, the inclusion of categorical variables (vendor and month) and a continuous predictor (scaled old prices) makes the model versatile for capturing both fixed and dynamic aspects of pricing. These attributes make Bayesian linear regression the optimal choice for this analysis.
+A Bayesian approach was particularly suitable for this dataset, as it balances interpretability with predictive accuracy. By using priors, the model prevents overfitting and provides robust estimates even with limited data. This framework also enables us to quantify uncertainty in the predictions through posterior distributions, offering richer insights compared to traditional regression methods. Additionally, the inclusion of categorical variables (vendor) and a continuous predictor (old prices and month) makes the model versatile for capturing both fixed and dynamic aspects of pricing. These attributes make Bayesian linear regression the optimal choice for this analysis.
 
 
 # Results {#sec-result}

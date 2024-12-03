@@ -30,8 +30,6 @@ clean_data <- combine_data %>% filter(vendor %in% c("TandT","Loblaws")) %>%
   filter(str_detect(tolower(product_name),"beef")) %>%
   select(-nowtime) %>%
   tidyr:: drop_na()
-  
 
 #### Save data ####
-write_csv(clean_data, "data/02-analysis_data/cleaned_data.csv")
 write_parquet(clean_data,"data/02-analysis_data/cleaned_data.parquet")
