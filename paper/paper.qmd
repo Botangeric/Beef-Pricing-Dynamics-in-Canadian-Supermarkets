@@ -103,7 +103,7 @@ ggplot(monthly_price_trend, aes(x = month, y = average_price)) +
   theme_minimal()
 ```
 
-The summary shows that the current_price in the dataset ranges from 0.39 to 101.15, with most prices concentrated in the lower range, as indicated by a median of 6.87 and a third quartile of 10.99. The average price is 9.56, while the standard deviation of 11.39 suggests significant variability, likely influenced by a few high outliers.
+The summary shows that the current price in the dataset ranges from 0.39 to 101.15, with most prices concentrated in the lower range, as indicated by a median of 6.87 and a third quartile of 10.99. The average price is 9.56, while the standard deviation of 11.39 suggests significant variability, likely influenced by a few high outliers.
 ```{r}
 #| label: tbl-summary
 #| fig-cap: Summary Statistics for Current Price
