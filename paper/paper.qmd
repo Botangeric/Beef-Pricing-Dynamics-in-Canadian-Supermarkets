@@ -3,7 +3,7 @@ title: "Beef Pricing Dynamics in Canadian Supermarkets"
 author: 
   - Bo Tang
 thanks: "Code and data are available at: [https://github.com/Botangeric/Beef-Pricing-Dynamics-in-Canadian-Supermarkets)."
-date: today
+date: 3 December 2024
 date-format: long
 abstract: "This study examines beef pricing trends in two Canadian supermarkets, T&T and Loblaws, using data from June to November 2024. We found that prices were stable overall, with seasonal increases in winter and significant differences between the supermarkets' pricing strategies. These findings reveal how cultural and operational factors, alongside seasonality, influence consumer pricing. This contributes to a better understanding of market dynamics and economic behavior in Canada."
 format: pdf
